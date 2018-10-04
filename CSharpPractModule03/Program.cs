@@ -16,8 +16,8 @@ namespace CSharpPractModule03
             Console.WriteLine("Press 1 to task 1");
             Console.WriteLine("Press 2 to task 2");
             Console.WriteLine("Press 3 to task 3");
-            Console.WriteLine("Press 4 for task four");
-            Console.WriteLine("Press 5 for task five");
+            Console.WriteLine("Press 4 to task 4");
+            Console.WriteLine("Press 5 to task 5");
             menu = Console.ReadLine();
             Random rand = new Random();
 
@@ -147,7 +147,7 @@ namespace CSharpPractModule03
 
             else if (menu == "3")
             {
-               
+
                 Console.WriteLine("Enter string to check on palindrome");
                 string palindrome = Console.ReadLine();
 
@@ -166,14 +166,48 @@ namespace CSharpPractModule03
                     if (arrayChar[i] == tmp[i]) count++;
                 }
 
-                if (count !=0)
+                if (count != 0)
                 {
                     Console.WriteLine("String is palindrome");
                 }
                 else Console.WriteLine("String  is not palindrome");
-                Console.ReadLine();
+
             }
-            
+
+            else if (menu == "4")
+            {
+                int count = 0;
+                Console.WriteLine("Enter string to calculate number of words");
+                string senstece = Console.ReadLine();
+                char[] arrayChar = senstece.ToCharArray();
+                for (int i = 0; i < arrayChar.Length; i++)
+                {
+                    if (arrayChar[i] == ' ' || arrayChar[i] == arrayChar[arrayChar.Length - 1]) count++;
+                }
+                Console.WriteLine("count of words is " + count);
+            }
+
+            else if (menu == "5")
+            {
+                int[,] array5 = new int[5, 5];
+
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        array5[i,j] = rand.Next(-100, 100);
+                        Console.Write(array5[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                
+                Console.WriteLine();
+              
+                int sum = array5.Cast<int>().Sum();
+                Console.WriteLine("sum of array elements is " + sum);
+
+            }
+                Console.ReadLine();
         }
     }
 }
