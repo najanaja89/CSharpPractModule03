@@ -15,7 +15,7 @@ namespace CSharpPractModule03
             string menu = "";
             Console.WriteLine("Press 1 to task 1");
             Console.WriteLine("Press 2 to task 2");
-            Console.WriteLine("Press 3 to change font to upper case");
+            Console.WriteLine("Press 3 to task 3");
             Console.WriteLine("Press 4 for task four");
             Console.WriteLine("Press 5 for task five");
             menu = Console.ReadLine();
@@ -31,7 +31,7 @@ namespace CSharpPractModule03
                 int sumEven = 0;
                 double sumOdd = 0;
 
-              
+
                 for (int i = 0; i < 5; i++)
                 {
                     Console.Write("Enter numeric value for A " + i + ": ");
@@ -86,7 +86,7 @@ namespace CSharpPractModule03
                 Console.WriteLine("Sum of all odd in array B is " + sumOdd);
 
                 Console.WriteLine();
-                Console.WriteLine(); 
+                Console.WriteLine();
             }
 
             else if (menu == "2")
@@ -140,12 +140,40 @@ namespace CSharpPractModule03
                             }
                         }
                     }
-                   
+
                     Console.Write(arrayThree[i] + " ");
                 }
             }
 
-            Console.ReadLine();
+            else if (menu == "3")
+            {
+               
+                Console.WriteLine("Enter string to check on palindrome");
+                string palindrome = Console.ReadLine();
+
+                Console.WriteLine();
+                palindrome.ToLower();
+                char[] arrayChar = palindrome.ToCharArray();
+                Array.Reverse(arrayChar);
+                char[] tmp = palindrome.ToCharArray();
+
+                Console.WriteLine(arrayChar);
+                Console.WriteLine(tmp);
+
+                int count = 0;
+                for (int i = 0; i < arrayChar.Length; i++)
+                {
+                    if (arrayChar[i] == tmp[i]) count++;
+                }
+
+                if (count !=0)
+                {
+                    Console.WriteLine("String is palindrome");
+                }
+                else Console.WriteLine("String  is not palindrome");
+                Console.ReadLine();
+            }
+            
         }
     }
 }
